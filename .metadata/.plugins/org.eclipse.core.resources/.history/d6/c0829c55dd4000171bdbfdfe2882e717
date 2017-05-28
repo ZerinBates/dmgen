@@ -1,0 +1,10 @@
+package dnd;
+
+public class dice {
+	int current;
+int roll (int num){
+	current = ((int)(Math.random()*num))
+	return current;
+}
+
+}

@@ -1,0 +1,36 @@
+package dnd;
+
+public class npc {
+char GE;
+char LC;
+int level;
+String clss;
+int attitude;
+String createQuest(){
+	double challengeRate =  (Math.random()*5-1);
+	String descript = null;
+	dice six = new dice(); 
+	six.roll(6);
+	// go and get them
+	if (six.current==1){
+		double distance = challengeRate*.5;
+		//what to get
+		dice four = new dice();
+		four.roll(4);
+		// personal object
+			if (four.current==1){
+				dice three = new dice();
+				three.roll(3);
+				if (three.current==1)
+				descript+="Go and get journal (if opend contains 25% blackmail; 25% spell; 25% map; 25% trap)";
+			}
+			if (distance > 1){
+		}
+		
+	}
+	
+	
+	return descript;
+}
+
+}

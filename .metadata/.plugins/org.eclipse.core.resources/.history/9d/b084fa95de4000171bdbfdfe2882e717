@@ -1,0 +1,17 @@
+package dnd;
+
+public class npc {
+char GE;
+char LC;
+int level;
+String clss;
+int attitude;
+String createQuest(){
+	int dice=(int) (Math.random()*6);
+	System.out.println(dice);
+	String n = null;
+	
+	return n;
+}
+
+}

@@ -1,0 +1,166 @@
+package dnd;
+
+public class npc {
+public namegen rName = new namegen();
+String name=rName.getName();
+
+char GE;
+char LC;
+int level;
+String clss;
+int attitude;
+String createQuest(){
+	//System.out.println(name);
+	double challengeRate =  (Math.random()*5-1);
+	String descript = "root tooten shootout";
+	dice six = new dice(); 
+	six.roll(6);
+	// go and get them
+	if (six.current==1){
+		double distance = challengeRate*.5*(Math.random());
+		//what to get
+		dice four = new dice();
+		four.roll(4);
+		// personal object
+		
+			if (four.current==1){
+				dice three = new dice();
+				three.roll(3);
+				if (three.current==1){
+				descript+="Go and get journal (if opend contains 25% blackmail; 25% spell; 25% map; 25% trap)";
+			}
+				if (three.current == 2){
+					descript+="Go and get letter (if opend contains password to secret organization, trap, blackmail";
+				}
+				if (three.current==3){
+					descript+="Go and get evidence";
+				}
+			}
+			//item
+			if (four.current==2){
+				if (challengeRate<2){
+					
+					descript+="Go and get magic item";
+				}
+			}
+			//character
+			if (four.current==3){
+				npc guy = new npc();
+				descript+="go and get "+guy.name;
+			}
+			if (distance < 1){
+				dice three = new dice();
+				three.roll(3);
+				if (three.current==1){
+					descript+="from a shop";
+				}
+					if (three.current == 2){
+						npc guy = new npc();
+						descript+="from "+guy.name;
+					}
+					if (three.current==3){
+						descript+="from police vault";
+					}
+		}else{
+			dice dfour = new dice();
+			dfour.roll(4);
+			if (dfour.current==1){
+				descript+="from generate shelter";
+			}
+				if (dfour.current == 2){
+					npc guy = new npc();
+					descript+="from dungen";
+				}
+				if (dfour.current==3){
+
+					descript+="from ship";
+				}
+				if (dfour.current==4){
+					dfour.roll(4);
+					if (dfour.current==1){
+						descript+="from marsh";
+					}
+						if (dfour.current == 2){
+							npc guy = new npc();
+							descript+="from mountians";
+						}
+						if (dfour.current==3){
+							npc guy = new npc();
+							descript+="from lake";
+						}
+						if (dfour.current==4){
+							dfour.roll(4);
+							
+							descript+="from woods";
+						}
+					
+				}
+		}
+		
+	}
+	// clear out
+	if (six.current==2){
+		descript += "Clear an encounter ";
+		dice dfour = new dice();
+		dfour.roll(4);
+		if (dfour.current==1){
+			descript+="from generate shelter";
+		}
+			if (dfour.current == 2){
+				npc guy = new npc();
+				descript+="from dungen";
+			}
+			if (dfour.current==3){
+				npc guy = new npc();
+				descript+="from ship";
+			}
+			if (dfour.current==4){
+				dfour.roll(4);
+				if (dfour.current==1){
+					descript+="from marsh";
+				}
+					if (dfour.current == 2){
+						npc guy = new npc();
+						descript+="from mountians";
+					}
+					if (dfour.current==3){
+						npc guy = new npc();
+						descript+="from lake";
+					}
+					if (dfour.current==4){
+						dfour.roll(4);
+						
+						descript+="from woods";
+					}
+				
+			}
+	
+	}
+	//tracking
+	if (six.current==3){
+		descript += "Track a ";
+		dice three = new dice();
+		three.roll(3);
+		if (three.current==1){
+			descript+="ship";
+		}
+			if (three.current == 2){
+				npc guy = new npc();
+				descript+="from "+guy.name;
+			}
+			if (three.current==3){
+				descript+="monster";
+			}
+			three.roll(2);
+			if (three.current==1){
+				
+			}
+	}
+	else{
+		//descript +="root tooten shootout";
+	}
+	System.out.println(descript);
+	return descript;
+}
+
+}

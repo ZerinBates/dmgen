@@ -1,0 +1,25 @@
+package dnd;
+
+
+import java.awt.Container;
+import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+public class main {
+	//This is the JFrame that runs the program.
+	private static JFrame frame =  new JFrame("ScanableGrocery");
+	
+	//This is the pane in the JFrame
+	private static Container pane = frame.getContentPane();
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		pane = frame.getContentPane();
+		
+		//This Layout Manager is more important later in the pane design methods
+		pane.setLayout(new GridBagLayout());
+	}
+
+}
